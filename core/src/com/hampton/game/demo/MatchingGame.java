@@ -19,8 +19,11 @@ import com.hampton.game.utils.ActorUtils;
 public class MatchingGame extends GameScreen {
 
     private Actor [] tiles;
+    private Actor [] tilesUp;
+    private Actor [] pictureUp;
     private float xMove;
     private float yMove;
+    // ????private String tileMatch;
     private final float MAX_MOVE = 10;
     private Actor batgirl;
 
@@ -53,13 +56,22 @@ public class MatchingGame extends GameScreen {
 
     @Override
     public void setInputForActors() {
-        batgirl.addListener(new ActorGestureListener() {
-            @Override
-            public void touchDown(InputEvent event, float x, float y, int pointer, int button) {
-                // Stop any other actions
+        for (int i = 0; i < tiles.length; i++) {
+            final int index = i;
+            tiles[i].addListener(new ActorGestureListener() {
+                @Override
+                public void touchDown(InputEvent event, float x, float y, int pointer, int button) {
+                    pictures[index].setVisible(true);
 
-            }
-        });
+                }
+            });
+        }
+
+       // if ( int tilesUp; tiles.length; i++ ){
+            //(tilesUp && pictureUp = )
+
+
+      //  }
     }
 
     @Override
