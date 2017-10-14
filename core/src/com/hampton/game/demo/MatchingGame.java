@@ -42,14 +42,14 @@ public class MatchingGame extends GameScreen {
         }
 
 
-        pictures.add(ActorUtils.createActorFromImage("batgirl.jpg"));
+        pictures.add(ActorUtils.createActorFromImage("batgirl.png"));
         pictures.add(ActorUtils.createActorFromImage("spiderman.jpg"));
         pictures.add(ActorUtils.createActorFromImage("captainamerican.jpg"));
         pictures.add(ActorUtils.createActorFromImage("bear.png"));
         pictures.add(ActorUtils.createActorFromImage("ladybug.png"));
         pictures.add(ActorUtils.createActorFromImage("pig.png"));
 
-        pictures.add(ActorUtils.createActorFromImage("batgirl.jpg"));
+        pictures.add(ActorUtils.createActorFromImage("batgirl.png"));
         pictures.add(ActorUtils.createActorFromImage("spiderman.jpg"));
         pictures.add(ActorUtils.createActorFromImage("captainamerican.jpg"));
         pictures.add(ActorUtils.createActorFromImage("bear.png"));
@@ -61,12 +61,12 @@ public class MatchingGame extends GameScreen {
         int i;
 
            for (i = 0; i < tiles.length; i++) {
-               int xPos = 10 + (i % 6) * 10;
-               int yPos = 10 + (i / 6) * 10;
+               int xPos = 210 + (i % 6) * 210;
+               int yPos = 210 + (i / 6) * 210;
                tiles[i].setPosition(xPos, yPos);
                stage.addActor(tiles[i]);
            }
-        batgirl = ActorUtils.createActorFromImage("batgirl.jpg");
+        batgirl = ActorUtils.createActorFromImage("batgirl.png");
         // change the width and length back to 3 (14, 18).
         batgirl.setSize(batgirl.getWidth()/14, batgirl.getHeight()/18);
         batgirl.setPosition(
