@@ -45,28 +45,7 @@ public class MatchingGame extends GameScreen {
             @Override
             public void touchDown(InputEvent event, float x, float y, int pointer, int button) {
                 // Stop any other actions
-                ninja.clearActions();
-                xMove = MathUtils.random(MAX_MOVE) - MAX_MOVE/2;
-                yMove = MathUtils.random(MAX_MOVE) - MAX_MOVE/2;
-                ninja.addAction(new Action() {
-                    @Override
-                    public boolean act(float delta) {
-                        if (ninja.getX() + xMove < 0) {
-                            xMove = -xMove;
-                        }
-                        if (ninja.getX() + ninja.getWidth() + xMove > stage.getViewport().getScreenWidth()) {
-                            xMove = -xMove;
-                        }
-                        if (ninja.getY() + yMove < 0) {
-                            yMove = -yMove;
-                        }
-                        if (ninja.getY() + ninja.getHeight() + yMove > stage.getViewport().getScreenHeight()) {
-                            yMove = -yMove;
-                        }
-                        ninja.moveBy(xMove, yMove);
-                        return false;
-                    }
-                });
+
             }
         });
     }
