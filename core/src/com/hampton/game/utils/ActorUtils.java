@@ -22,7 +22,10 @@ public class ActorUtils {
     // We make private constructors for util classes so no one can declare an instance of the class
     private ActorUtils(){}
     public static Actor createActorFromImage(String imageName) {
-        return createActorFromImage(new Texture(imageName));
+        Actor actor = createActorFromImage(new Texture(imageName));
+        actor.setName(imageName);
+        return actor;
+        //Actors name is the name of the image
     }
 
     public static Actor createActorFromImage(Texture texture) {
