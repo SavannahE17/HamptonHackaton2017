@@ -33,9 +33,6 @@ public class MatchingGame extends GameScreen {
     public void createActors() {
         backgroundColor = new Color(1, 1, 1, 1);
         tiles = new Actor[12];
-
-
-
         int i;
         /*
            for (i = 0; i < tiles.length; i++) {
@@ -44,34 +41,19 @@ public class MatchingGame extends GameScreen {
            }
          */
 
-<<<<<<< HEAD
         batgirl = ActorUtils.createActorFromImage("batgirl.jpg");
-            // change the width and length back to 3 (14, 18).
+        // change the width and length back to 3 (14, 18).
         batgirl.setSize(batgirl.getWidth()/3, batgirl.getHeight()/3);
         batgirl.setPosition(
                 // change these numbers back to 2 (7)
                 stage.getViewport().getScreenWidth()/2 - batgirl.getWidth()/2,
                 stage.getViewport().getScreenHeight()/2 - batgirl.getHeight()/2);
         stage.addActor(batgirl);
-=======
-
-        tiles = ActorUtils.createActorFromImage("bear.png");
-
-        tiles.setSize(tiles.getWidth()/3, tiles.getHeight()/3);
-        tiles.setPosition(
-                stage.getViewport().getScreenWidth()/2 - tiles.getWidth()/2,
-                stage.getViewport().getScreenHeight()/2 - tiles.getHeight()/2);
-        stage.addActor(tiles);
->>>>>>> 2a0bb735d27f1eb2f1535f784c5b7f61551477f9
     }
 
     @Override
     public void setInputForActors() {
-<<<<<<< HEAD
         batgirl.addListener(new ActorGestureListener() {
-=======
-        tiles.addListener(new ActorGestureListener() {
->>>>>>> 2a0bb735d27f1eb2f1535f784c5b7f61551477f9
             @Override
             public void touchDown(InputEvent event, float x, float y, int pointer, int button) {
                 // Stop any other actions
