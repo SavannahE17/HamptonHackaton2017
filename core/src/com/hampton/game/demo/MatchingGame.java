@@ -61,7 +61,7 @@ public class MatchingGame extends GameScreen {
         pictures.add(ActorUtils.createActorFromImage("bear.png"));
         pictures.add(ActorUtils.createActorFromImage("ladybug.png"));
         pictures.add(ActorUtils.createActorFromImage("pig.png"));
-
+        pictures.shuffle();
 
 
         int i;
@@ -71,6 +71,11 @@ public class MatchingGame extends GameScreen {
                int yPos = 210 + (i / 6) * 210;
                tiles[i].setPosition(xPos, yPos);
                stage.addActor(tiles[i]);
+
+               pictures.get(i).setPosition(xPos, yPos);
+               pictures.get(i).setVisible(false);
+               stage.addActor(pictures.get(i));
+
            }
         /*batgirl = ActorUtils.createActorFromImage("batgirl.png");
         // change the width and length back to 3 (14, 18).
