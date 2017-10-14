@@ -48,6 +48,7 @@ public class MatchingGame extends GameScreen {
         stage.addActor(back);
         back.setSize(stage.getViewport().getScreenWidth(),stage.getViewport().getScreenHeight() );
         Actor bckgrnd;
+        // bckgrnd.font.getData().setScale(10);
         bckgrnd = ActorUtils.createButtonFromText("Heroes VS Aniamal's! Find the matching charcacters!", new Color(.283f, .755f, .213f, 1));
         bckgrnd.setPosition(stage.getViewport().getScreenWidth() / 2 - (bckgrnd.getWidth() / 2), stage.getViewport().getScreenHeight() - bckgrnd.getHeight());
         backgroundColor = new Color(.8726f, .6372f, .2718f, 1);
