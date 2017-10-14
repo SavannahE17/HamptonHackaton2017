@@ -26,21 +26,34 @@ import com.badlogic.gdx.scenes.scene2d.utils.ActorGestureListener;
 import com.hampton.game.GameScreen;
 import com.hampton.game.utils.ActorUtils;
 
+import java.util.Random;
+
 /**
  * Created by turnerd on 10/13/17.
  */
 public class MatchingGame extends GameScreen {
 
     private Actor[] tiles;
-
     private Actor tilesUp;
     private Actor tilesUp1;
     private Actor pictureUp;
     private Actor pictureUp1;
     private Music rainMusic;
+
+    private Random randomNumberGenerator = new Random();
+    private Actor bucket;
+    private Label scoreLabel;
+    private Label.LabelStyle scoreStyle;
+    private int score = 0;
+    private int dropSpeed = 3;
+    private int pauseTime = 1;
+    private int newDropInterval = 60;
+    private boolean gameOn = false;
+
+
     int state = 0;
 
-    rainMusic = Gdx.audio.newMusic(Gdx.files.internal("bgroundMusic.mp3"));
+
 
     rainMusic.setLooping(true);
     rainMusic.play();
@@ -60,7 +73,7 @@ public class MatchingGame extends GameScreen {
 
     @Override
     public void initialize() {
-
+        rainMusic = Gdx.audio.newMusic(Gdx.files.internal("bgroundMusic.mp3"));
     }
 
     @Override
