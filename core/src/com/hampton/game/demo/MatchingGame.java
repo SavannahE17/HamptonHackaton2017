@@ -34,20 +34,20 @@ public class MatchingGame extends GameScreen {
         backgroundColor = new Color(1, 1, 1, 1);
         tiles = new Actor[12];
         int i;
-        /*
+
            for (i = 0; i < tiles.length; i++) {
                int xPos = 10 + (i % 6) * 10;
                int yPos = 10 + (i / 6) * 10;
+               tiles[i].setPosition(xPos, yPos);
+               stage.addActor(tiles[i]);
            }
-         */
-
         batgirl = ActorUtils.createActorFromImage("batgirl.jpg");
         // change the width and length back to 3 (14, 18).
-        batgirl.setSize(batgirl.getWidth()/3, batgirl.getHeight()/3);
+        batgirl.setSize(batgirl.getWidth()/14, batgirl.getHeight()/18);
         batgirl.setPosition(
                 // change these numbers back to 2 (7)
-                stage.getViewport().getScreenWidth()/2 - batgirl.getWidth()/2,
-                stage.getViewport().getScreenHeight()/2 - batgirl.getHeight()/2);
+                stage.getViewport().getScreenWidth()/7 - batgirl.getWidth()/7,
+                stage.getViewport().getScreenHeight()/7 - batgirl.getHeight()/7);
         stage.addActor(batgirl);
     }
 
