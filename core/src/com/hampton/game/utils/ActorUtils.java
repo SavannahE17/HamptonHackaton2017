@@ -36,7 +36,9 @@ public class ActorUtils {
 
     public static Label createButtonFromText(String text, Color color) {
         Label.LabelStyle style = new Label.LabelStyle();
+
         style.font = new BitmapFont();
+        style.font.getData().setScale(4);
         style.fontColor = color;
         Label actor = new Label(text, style);
         actor.setOrigin(actor.getWidth()/2, actor.getHeight()/2);

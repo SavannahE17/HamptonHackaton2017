@@ -20,7 +20,7 @@ import com.hampton.game.utils.ActorUtils;
  */
 public class MatchingGame extends GameScreen {
 
-    private Actor [] tiles;
+    private Actor[] tiles;
 
     private Actor tilesUp;
     private Actor tilesUp1;
@@ -45,12 +45,21 @@ public class MatchingGame extends GameScreen {
 
     @Override
     public void createActors() {
+        Actor back;
+        back = ActorUtils.createActorFromImage("wallpaper.jpg");
+        stage.addActor(back);
+        back.setSize(stage.getViewport().getScreenWidth(),stage.getViewport().getScreenHeight() );
+        Actor bckgrnd;
+        // bckgrnd.font.getData().setScale(10);
+        bckgrnd = ActorUtils.createButtonFromText("Heroes VS Aniamal's! Find the matching charcacters!", new Color(.283f, .755f, .213f, 1));
+        bckgrnd.setPosition(stage.getViewport().getScreenWidth() / 2 - (bckgrnd.getWidth() / 2), stage.getViewport().getScreenHeight() - bckgrnd.getHeight());
         backgroundColor = new Color(.8726f, .6372f, .2718f, 1);
+        stage.addActor(bckgrnd);
         tiles = new Actor[12];
 
         pictures = new Array<Actor>(12);
-        for (int i=0; i < tiles.length; i++){
-            tiles [i] = ActorUtils.createActorFromImage("tile.jpeg");
+        for (int i = 0; i < tiles.length; i++) {
+            tiles[i] = ActorUtils.createActorFromImage("tile.jpeg");
         }
 
 
@@ -70,21 +79,25 @@ public class MatchingGame extends GameScreen {
         //pictures.shuffle();
 
 
+
         int i;
 
-           for (i = 0; i < tiles.length; i++) {
-               int xPos = 210 + (i % 6) * 210;
-               int yPos = 210 + (i / 6) * 210;
-               tiles[i].setPosition(xPos, yPos);
-               stage.addActor(tiles[i]);
+        for (i = 0; i < tiles.length; i++) {
+            int xPos = 210 + (i % 6) * 210;
+            int yPos = 210 + (i / 6) * 210;
+            tiles[i].setPosition(xPos, yPos);
+            stage.addActor(tiles[i]);
 
-               pictures.get(i).setPosition(xPos, yPos);
-               pictures.get(i).setSize(tiles[i].getWidth(), tiles[i].getHeight());
-               pictures.get(i).setVisible(false);
-               pictures.get(i).setTouchable(Touchable.disabled);
-               stage.addActor(pictures.get(i));
 
-           }
+            pictures.get(i).setPosition(xPos, yPos);
+            pictures.get(i).setSize(tiles[i].getWidth(), tiles[i].getHeight());
+            pictures.get(i).setVisible(false);
+            pictures.get(i).setTouchable(Touchable.disabled);
+            stage.addActor(pictures.get(i));
+
+
+
+        }
         /*batgirl = ActorUtils.createActorFromImage("batgirl.png");
         // change the width and length back to 3 (14, 18).
         batgirl.setSize(batgirl.getWidth()/14, batgirl.getHeight()/18);
@@ -102,6 +115,7 @@ public class MatchingGame extends GameScreen {
             tiles[i].addListener(new ActorGestureListener() {
                 @Override
                 public void touchDown(InputEvent event, float x, float y, int pointer, int button) {
+
 
 
 
@@ -141,16 +155,20 @@ public class MatchingGame extends GameScreen {
                     }
                     //tiles[index].setVisible(false);
 
+
                 }
             });
 
         }
+
     }
+
 
         /*for ( Actor pictures: stageActors()){
             if (pictures.getName()= != null && pictures.getName().equals("bear.png");
             pictures.remove();
         } */
+
 
 
     @Override
