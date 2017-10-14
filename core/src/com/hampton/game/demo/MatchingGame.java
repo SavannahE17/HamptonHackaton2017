@@ -128,10 +128,12 @@ public class MatchingGame extends GameScreen {
                         pictureUp = pictures.get(index);
 
                     } else if (state == 1) {
-                        state = 2;
-                        tilesUp1 = tiles[index];
-                        pictureUp1 = pictures.get(index);
-                        pictures.get(index).setVisible(true);
+                        if (pictures.get(index).isVisible() == false) {
+                            state = 2;
+                            tilesUp1 = tiles[index];
+                            pictureUp1 = pictures.get(index);
+                            pictures.get(index).setVisible(true);
+                        }
                     }
                     else {
 
