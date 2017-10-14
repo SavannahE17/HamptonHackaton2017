@@ -24,7 +24,9 @@ public class MatchingGame extends GameScreen {
     private Actor tilesUp;
     private Actor tilesUp1;
     private Actor pictureUp;
+
     private Actor pictureUp1;
+
 
     private Array<Actor> pictures;
 
@@ -36,7 +38,7 @@ public class MatchingGame extends GameScreen {
 
     @Override
     public void initialize() {
-        createActors();
+
     }
 
     @Override
@@ -76,7 +78,7 @@ public class MatchingGame extends GameScreen {
 
                pictures.get(i).setPosition(xPos, yPos);
                pictures.get(i).setSize(tiles[i].getWidth(), tiles[i].getHeight());
-               pictures.get(i).setVisible(true);
+               pictures.get(i).setVisible(false);
                stage.addActor(pictures.get(i));
 
            }
@@ -98,8 +100,7 @@ public class MatchingGame extends GameScreen {
                 @Override
                 public void touchDown(InputEvent event, float x, float y, int pointer, int button) {
                     pictures.get(index).setVisible(true);
-                    //tiles[i].setVisible(false);
-
+            tiles[index].setVisible(false);
                 }
             });
         }
