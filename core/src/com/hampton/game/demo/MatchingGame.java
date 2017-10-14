@@ -49,15 +49,15 @@ public class MatchingGame extends GameScreen {
 
 
         pictures.add(ActorUtils.createActorFromImage("batgirl.png"));
-        pictures.add(ActorUtils.createActorFromImage("spiderman.jpg"));
-        pictures.add(ActorUtils.createActorFromImage("captainamerican.jpg"));
+        pictures.add(ActorUtils.createActorFromImage("spiderman.png"));
+        pictures.add(ActorUtils.createActorFromImage("captainamerican.png"));
         pictures.add(ActorUtils.createActorFromImage("bear.png"));
         pictures.add(ActorUtils.createActorFromImage("ladybug.png"));
         pictures.add(ActorUtils.createActorFromImage("pig.png"));
 
         pictures.add(ActorUtils.createActorFromImage("batgirl.png"));
-        pictures.add(ActorUtils.createActorFromImage("spiderman.jpg"));
-        pictures.add(ActorUtils.createActorFromImage("captainamerican.jpg"));
+        pictures.add(ActorUtils.createActorFromImage("spiderman.png"));
+        pictures.add(ActorUtils.createActorFromImage("captainamerican.png"));
         pictures.add(ActorUtils.createActorFromImage("bear.png"));
         pictures.add(ActorUtils.createActorFromImage("ladybug.png"));
         pictures.add(ActorUtils.createActorFromImage("pig.png"));
@@ -73,7 +73,8 @@ public class MatchingGame extends GameScreen {
                stage.addActor(tiles[i]);
 
                pictures.get(i).setPosition(xPos, yPos);
-               pictures.get(i).setVisible(false);
+               pictures.get(i).setSize(tiles[i].getWidth(), tiles[i].getHeight());
+               pictures.get(i).setVisible(true);
                stage.addActor(pictures.get(i));
 
            }
