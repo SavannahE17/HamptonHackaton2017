@@ -18,7 +18,7 @@ import com.hampton.game.utils.ActorUtils;
  */
 public class MatchingGame extends GameScreen {
 
-    private Actor ninja;
+    private Actor [] tiles;
     private float xMove;
     private float yMove;
     private final float MAX_MOVE = 10;
@@ -31,7 +31,10 @@ public class MatchingGame extends GameScreen {
     @Override
     public void createActors() {
         backgroundColor = new Color(1, 1, 1, 1);
+        tiles = new Actor[12];
+        for (i = 0; i < ?; i++)
         ninja = ActorUtils.createActorFromImage("bear.png");
+
         ninja.setSize(ninja.getWidth()/3, ninja.getHeight()/3);
         ninja.setPosition(
                 stage.getViewport().getScreenWidth()/2 - ninja.getWidth()/2,
