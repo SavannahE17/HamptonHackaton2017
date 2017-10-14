@@ -16,7 +16,7 @@ import com.hampton.game.utils.ActorUtils;
 /**
  * Created by turnerd on 10/13/17.
  */
-public class NinjaBounce extends GameScreen {
+public class MatchingGame extends GameScreen {
 
     private Actor ninja;
     private float xMove;
