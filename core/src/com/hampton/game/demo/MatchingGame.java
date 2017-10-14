@@ -31,7 +31,7 @@ public class MatchingGame extends GameScreen {
     @Override
     public void createActors() {
         backgroundColor = new Color(1, 1, 1, 1);
-        ninja = ActorUtils.createActorFromImage("ninja-2swords.png");
+        ninja = ActorUtils.createActorFromImage("bear.png");
         ninja.setSize(ninja.getWidth()/3, ninja.getHeight()/3);
         ninja.setPosition(
                 stage.getViewport().getScreenWidth()/2 - ninja.getWidth()/2,
