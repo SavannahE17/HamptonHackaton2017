@@ -14,6 +14,17 @@ import com.badlogic.gdx.scenes.scene2d.utils.ActorGestureListener;
 import com.badlogic.gdx.utils.Array;
 import com.hampton.game.GameScreen;
 import com.hampton.game.utils.ActorUtils;
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.audio.Music;
+import com.badlogic.gdx.audio.Sound;
+import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.scenes.scene2d.Actor;
+import com.badlogic.gdx.scenes.scene2d.InputEvent;
+import com.badlogic.gdx.scenes.scene2d.ui.Label;
+import com.badlogic.gdx.scenes.scene2d.utils.ActorGestureListener;
+import com.hampton.game.GameScreen;
+import com.hampton.game.utils.ActorUtils;
 
 /**
  * Created by turnerd on 10/13/17.
@@ -26,9 +37,18 @@ public class MatchingGame extends GameScreen {
     private Actor tilesUp1;
     private Actor pictureUp;
     private Actor pictureUp1;
+    private Music rainMusic;
     int state = 0;
 
+    rainMusic = Gdx.audio.newMusic(Gdx.files.internal("bgroundMusic.mp3"));
 
+    rainMusic.setLooping(true);
+    rainMusic.play();
+     gameOn = true;
+     score = 0;
+     dropSpeed = 3; 
+    newDropInterval = 60;
+     numFrames = 0;
 
     private Array<Actor> pictures;
 
