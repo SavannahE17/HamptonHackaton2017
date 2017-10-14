@@ -32,19 +32,21 @@ public class MatchingGame extends GameScreen {
     public void createActors() {
         backgroundColor = new Color(1, 1, 1, 1);
         tiles = new Actor[12];
-        for (i = 0; i < ?; i++)
-        ninja = ActorUtils.createActorFromImage("bear.png");
+        int i
+        for (i = 0; i < tiles.length; i++)
 
-        ninja.setSize(ninja.getWidth()/3, ninja.getHeight()/3);
-        ninja.setPosition(
-                stage.getViewport().getScreenWidth()/2 - ninja.getWidth()/2,
-                stage.getViewport().getScreenHeight()/2 - ninja.getHeight()/2);
-        stage.addActor(ninja);
+        tiles = ActorUtils.createActorFromImage("bear.png");
+
+        tiles.setSize(tiles.getWidth()/3, tiles.getHeight()/3);
+        tiles.setPosition(
+                stage.getViewport().getScreenWidth()/2 - tiles.getWidth()/2,
+                stage.getViewport().getScreenHeight()/2 - tiles.getHeight()/2);
+        stage.addActor(tiles);
     }
 
     @Override
     public void setInputForActors() {
-        ninja.addListener(new ActorGestureListener() {
+        tiles.addListener(new ActorGestureListener() {
             @Override
             public void touchDown(InputEvent event, float x, float y, int pointer, int button) {
                 // Stop any other actions
