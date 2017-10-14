@@ -20,12 +20,12 @@ import com.hampton.game.utils.ActorUtils;
 public class MatchingGame extends GameScreen {
 
     private Actor [] tiles;
-<<<<<<< HEAD
-    private Actor [] tilesUp;
-    private Actor [] pictureUp;
-=======
+
+    private Actor tilesUp;
+    private Actor pictureUp;
+
     private Array<Actor> pictures;
->>>>>>> 8a8e89fd0145ee781e8c442f4b3620e59d38eeb5
+
     private float xMove;
     private float yMove;
     // ????private String tileMatch;
@@ -72,14 +72,14 @@ public class MatchingGame extends GameScreen {
                tiles[i].setPosition(xPos, yPos);
                stage.addActor(tiles[i]);
            }
-        batgirl = ActorUtils.createActorFromImage("batgirl.png");
+        /*batgirl = ActorUtils.createActorFromImage("batgirl.png");
         // change the width and length back to 3 (14, 18).
         batgirl.setSize(batgirl.getWidth()/14, batgirl.getHeight()/18);
         batgirl.setPosition(
                 // change these numbers back to 2 (7)
                 stage.getViewport().getScreenWidth()/7 - batgirl.getWidth()/7,
                 stage.getViewport().getScreenHeight()/7 - batgirl.getHeight()/7);
-        stage.addActor(batgirl);
+        stage.addActor(batgirl);*/
     }
 
     @Override
@@ -89,7 +89,7 @@ public class MatchingGame extends GameScreen {
             tiles[i].addListener(new ActorGestureListener() {
                 @Override
                 public void touchDown(InputEvent event, float x, float y, int pointer, int button) {
-                    pictures[index].setVisible(true);
+                    pictures.get(index).setVisible(true);
 
                 }
             });
@@ -108,21 +108,6 @@ public class MatchingGame extends GameScreen {
 
     @Override
     protected void calledEveryFrame() {
-        if(Gdx.input.isTouched()) {
-            // input.getY sets 0 as the top but actors use 0 for the bottom so we have to flip it
-            Vector2 touchPoint = new Vector2(
-                    Gdx.input.getX(),
-                    stage.getViewport().getScreenHeight() - Gdx.input.getY());
-            // Only move to the point if we didn't click on the ninja
-            if(!ActorUtils.actorContainsPoint(batgirl, touchPoint)) {
-                batgirl.clearActions();
-                // Move to touched location in 3 seconds
-                batgirl.addAction(Actions.moveTo(
-                        touchPoint.x - batgirl.getWidth() / 2,
-                        touchPoint.y - batgirl.getHeight() / 2,
-                        3,
-                        Interpolation.circleOut));
-            }
-        }
+
     }
 }
