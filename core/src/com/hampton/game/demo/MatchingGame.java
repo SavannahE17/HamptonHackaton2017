@@ -43,8 +43,11 @@ public class MatchingGame extends GameScreen {
 
     @Override
     public void createActors() {
+        Actor back;
+        back = ActorUtils.createActorFromImage("wallpaper.jpg");
+        stage.addActor(back);
+        back.setSize(stage.getViewport().getScreenWidth(),stage.getViewport().getScreenHeight() );
         Actor bckgrnd;
-        ActorUtils.createButtonFromText("Heroes VS Aniamal's! Find the matching charcacters!", new Color(.283f, .755f, .213f, 1));
         bckgrnd = ActorUtils.createButtonFromText("Heroes VS Aniamal's! Find the matching charcacters!", new Color(.283f, .755f, .213f, 1));
         bckgrnd.setPosition(stage.getViewport().getScreenWidth() / 2 - (bckgrnd.getWidth() / 2), stage.getViewport().getScreenHeight() - bckgrnd.getHeight());
         backgroundColor = new Color(.8726f, .6372f, .2718f, 1);
@@ -71,6 +74,7 @@ public class MatchingGame extends GameScreen {
         pictures.add(ActorUtils.createActorFromImage("ladybug.png"));
         pictures.add(ActorUtils.createActorFromImage("pig.png"));
         pictures.shuffle();
+
 
 
         int i;
