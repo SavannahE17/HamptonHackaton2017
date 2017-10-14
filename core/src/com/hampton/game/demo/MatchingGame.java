@@ -24,7 +24,7 @@ public class MatchingGame extends GameScreen {
     private Actor tilesUp;
     private Actor tilesUp1;
     private Actor pictureUp;
-    private Actor pictureUp1
+    private Actor pictureUp1;
 
     private Array<Actor> pictures;
 
@@ -103,9 +103,10 @@ public class MatchingGame extends GameScreen {
                 }
             });
         }
-
-       
-
+    //if (batgirl = batgirl ) {
+    //    remove. (batgirl);
+    //}
+    if ()
         /*for ( Actor pictures: stageActors()){
             if (pictures.getName()= != null && pictures.getName().equals("bear.png");
             pictures.remove();
