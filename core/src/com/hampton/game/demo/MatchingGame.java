@@ -22,7 +22,9 @@ public class MatchingGame extends GameScreen {
     private Actor [] tiles;
 
     private Actor tilesUp;
+    private Actor tilesUp1;
     private Actor pictureUp;
+    private Actor pictureUp1
 
     private Array<Actor> pictures;
 
@@ -101,11 +103,12 @@ public class MatchingGame extends GameScreen {
             });
         }
 
-       // if ( int tilesUp; tiles.length; i++ ){
-            //(tilesUp && pictureUp = )
+       
 
-
-      //  }
+        /*for ( Actor pictures: stageActors()){
+            if (pictures.getName()= != null && pictures.getName().equals("bear.png");
+            pictures.remove();
+        } */
     }
 
     @Override
