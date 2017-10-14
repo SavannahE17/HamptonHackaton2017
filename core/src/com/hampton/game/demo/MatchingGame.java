@@ -10,6 +10,7 @@ import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.utils.ActorGestureListener;
+import com.badlogic.gdx.utils.Array;
 import com.hampton.game.GameScreen;
 import com.hampton.game.utils.ActorUtils;
 
@@ -19,6 +20,7 @@ import com.hampton.game.utils.ActorUtils;
 public class MatchingGame extends GameScreen {
 
     private Actor [] tiles;
+    private Array<Actor> pictures;
     private float xMove;
     private float yMove;
     private final float MAX_MOVE = 10;
@@ -33,6 +35,29 @@ public class MatchingGame extends GameScreen {
     public void createActors() {
         backgroundColor = new Color(1, 1, 1, 1);
         tiles = new Actor[12];
+
+        pictures = new Array<Actor>(12);
+        for (int i=0; i < tiles.length; i++){
+            tiles [i] = ActorUtils.createActorFromImage("tile.jpeg");
+        }
+
+
+        pictures.add(ActorUtils.createActorFromImage("batgirl.jpg"));
+        pictures.add(ActorUtils.createActorFromImage("spiderman.jpg"));
+        pictures.add(ActorUtils.createActorFromImage("captainamerican.jpg"));
+        pictures.add(ActorUtils.createActorFromImage("bear.png"));
+        pictures.add(ActorUtils.createActorFromImage("ladybug.png"));
+        pictures.add(ActorUtils.createActorFromImage("pig.png"));
+
+        pictures.add(ActorUtils.createActorFromImage("batgirl.jpg"));
+        pictures.add(ActorUtils.createActorFromImage("spiderman.jpg"));
+        pictures.add(ActorUtils.createActorFromImage("captainamerican.jpg"));
+        pictures.add(ActorUtils.createActorFromImage("bear.png"));
+        pictures.add(ActorUtils.createActorFromImage("ladybug.png"));
+        pictures.add(ActorUtils.createActorFromImage("pig.png"));
+
+
+
         int i;
         /*
            for (i = 0; i < tiles.length; i++) {
