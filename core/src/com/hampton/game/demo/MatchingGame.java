@@ -22,6 +22,7 @@ public class MatchingGame extends GameScreen {
     private float xMove;
     private float yMove;
     private final float MAX_MOVE = 10;
+    Actor ninja;
 
     @Override
     public void initialize() {
@@ -32,8 +33,12 @@ public class MatchingGame extends GameScreen {
     public void createActors() {
         backgroundColor = new Color(1, 1, 1, 1);
         tiles = new Actor[12];
-        for (i = 0; i < ?; i++)
-        ninja = ActorUtils.createActorFromImage("bear.png");
+        int i;
+        for (i = 0; i < tiles.length; i++) {
+           //  tiles.length;
+        }
+
+        ninja = ActorUtils.createActorFromImage("batgirl.jpg");
 
         ninja.setSize(ninja.getWidth()/3, ninja.getHeight()/3);
         ninja.setPosition(
