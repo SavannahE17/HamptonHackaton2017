@@ -51,11 +51,9 @@ public class MatchingGame extends GameScreen {
         back.setSize(stage.getViewport().getScreenWidth(),stage.getViewport().getScreenHeight() );
         Actor bckgrnd;
         // bckgrnd.font.getData().setScale(10);
-<<<<<<< HEAD
+
         bckgrnd = ActorUtils.createButtonFromText("Heroes VS. Animals! Find the matching charcacters!", new Color(.283f, .755f, .213f, 1));
-=======
-        bckgrnd = ActorUtils.createButtonFromText("Heroes VS Animal's! Find the matching characters!", new Color(.283f, .755f, .213f, 1));
->>>>>>> 7ac5a77c19e3e3d0c166fc047daa84906de4e5cb
+
         bckgrnd.setPosition(stage.getViewport().getScreenWidth() / 2 - (bckgrnd.getWidth() / 2), stage.getViewport().getScreenHeight() - bckgrnd.getHeight());
         backgroundColor = new Color(.8726f, .6372f, .2718f, 1);
         stage.addActor(bckgrnd);
