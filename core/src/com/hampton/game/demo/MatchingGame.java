@@ -10,6 +10,7 @@ import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.utils.ActorGestureListener;
+import com.badlogic.gdx.utils.Array;
 import com.hampton.game.GameScreen;
 import com.hampton.game.utils.ActorUtils;
 
@@ -19,8 +20,12 @@ import com.hampton.game.utils.ActorUtils;
 public class MatchingGame extends GameScreen {
 
     private Actor [] tiles;
+<<<<<<< HEAD
     private Actor [] tilesUp;
     private Actor [] pictureUp;
+=======
+    private Array<Actor> pictures;
+>>>>>>> 8a8e89fd0145ee781e8c442f4b3620e59d38eeb5
     private float xMove;
     private float yMove;
     // ????private String tileMatch;
@@ -36,21 +41,44 @@ public class MatchingGame extends GameScreen {
     public void createActors() {
         backgroundColor = new Color(1, 1, 1, 1);
         tiles = new Actor[12];
-        int i;
-        /*
-           for (i = 0; i < tiles.length; i++) {
-               int xPos = 10 + (i % 6) * 10;
-               int yPos = 10 + (i / 6) * 10;
-           }
-         */
 
-        batgirl = ActorUtils.createActorFromImage("batgirl.jpg");
+        pictures = new Array<Actor>(12);
+        for (int i=0; i < tiles.length; i++){
+            tiles [i] = ActorUtils.createActorFromImage("tile.jpeg");
+        }
+
+
+        pictures.add(ActorUtils.createActorFromImage("batgirl.png"));
+        pictures.add(ActorUtils.createActorFromImage("spiderman.jpg"));
+        pictures.add(ActorUtils.createActorFromImage("captainamerican.jpg"));
+        pictures.add(ActorUtils.createActorFromImage("bear.png"));
+        pictures.add(ActorUtils.createActorFromImage("ladybug.png"));
+        pictures.add(ActorUtils.createActorFromImage("pig.png"));
+
+        pictures.add(ActorUtils.createActorFromImage("batgirl.png"));
+        pictures.add(ActorUtils.createActorFromImage("spiderman.jpg"));
+        pictures.add(ActorUtils.createActorFromImage("captainamerican.jpg"));
+        pictures.add(ActorUtils.createActorFromImage("bear.png"));
+        pictures.add(ActorUtils.createActorFromImage("ladybug.png"));
+        pictures.add(ActorUtils.createActorFromImage("pig.png"));
+
+
+
+        int i;
+
+           for (i = 0; i < tiles.length; i++) {
+               int xPos = 210 + (i % 6) * 210;
+               int yPos = 210 + (i / 6) * 210;
+               tiles[i].setPosition(xPos, yPos);
+               stage.addActor(tiles[i]);
+           }
+        batgirl = ActorUtils.createActorFromImage("batgirl.png");
         // change the width and length back to 3 (14, 18).
-        batgirl.setSize(batgirl.getWidth()/3, batgirl.getHeight()/3);
+        batgirl.setSize(batgirl.getWidth()/14, batgirl.getHeight()/18);
         batgirl.setPosition(
                 // change these numbers back to 2 (7)
-                stage.getViewport().getScreenWidth()/2 - batgirl.getWidth()/2,
-                stage.getViewport().getScreenHeight()/2 - batgirl.getHeight()/2);
+                stage.getViewport().getScreenWidth()/7 - batgirl.getWidth()/7,
+                stage.getViewport().getScreenHeight()/7 - batgirl.getHeight()/7);
         stage.addActor(batgirl);
     }
 
