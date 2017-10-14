@@ -40,40 +40,15 @@ public class MatchingGame extends GameScreen {
     private Actor pictureUp1;
     private Music rainMusic;
 
-    private Random randomNumberGenerator = new Random();
-    private Actor bucket;
-    private Label scoreLabel;
-    private Label.LabelStyle scoreStyle;
-    private int score = 0;
-    private int dropSpeed = 3;
-    private int pauseTime = 1;
-    private int newDropInterval = 60;
-    private boolean gameOn = false;
-
-
-    int state = 0;
-
-
-
-    rainMusic.setLooping(true);
-    rainMusic.play();
-     gameOn = true;
-     score = 0;
-     dropSpeed = 3; 
-    newDropInterval = 60;
-     numFrames = 0;
-
     private Array<Actor> pictures;
-
-    private float xMove;
-    private float yMove;
-    // ????private String tileMatch;
-    private final float MAX_MOVE = 10;
-    private Actor batgirl;
+    private int state = 0;
 
     @Override
     public void initialize() {
         rainMusic = Gdx.audio.newMusic(Gdx.files.internal("bgroundMusic.mp3"));
+        rainMusic.setLooping(true);
+        rainMusic.play();
+        numFrames = 0;
     }
 
     @Override
