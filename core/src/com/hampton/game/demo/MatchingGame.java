@@ -90,6 +90,7 @@ public class MatchingGame extends GameScreen {
                 @Override
                 public void touchDown(InputEvent event, float x, float y, int pointer, int button) {
                     pictures.get(index).setVisible(true);
+                    tiles[i].setVisible(false);
 
                 }
             });
