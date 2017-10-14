@@ -76,7 +76,7 @@ public class MatchingGame extends GameScreen {
         pictures.add(ActorUtils.createActorFromImage("bear.png"));
         pictures.add(ActorUtils.createActorFromImage("ladybug.png"));
         pictures.add(ActorUtils.createActorFromImage("pig.png"));
-        //pictures.shuffle();
+        pictures.shuffle();
 
 
 
