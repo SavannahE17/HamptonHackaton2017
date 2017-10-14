@@ -8,6 +8,7 @@ import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.scenes.scene2d.Action;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
+import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.utils.ActorGestureListener;
 import com.badlogic.gdx.utils.Array;
@@ -24,8 +25,9 @@ public class MatchingGame extends GameScreen {
     private Actor tilesUp;
     private Actor tilesUp1;
     private Actor pictureUp;
-
     private Actor pictureUp1;
+    int state = 0;
+
 
 
     private Array<Actor> pictures;
@@ -65,7 +67,7 @@ public class MatchingGame extends GameScreen {
         pictures.add(ActorUtils.createActorFromImage("bear.png"));
         pictures.add(ActorUtils.createActorFromImage("ladybug.png"));
         pictures.add(ActorUtils.createActorFromImage("pig.png"));
-        pictures.shuffle();
+        //pictures.shuffle();
 
 
         int i;
@@ -79,6 +81,7 @@ public class MatchingGame extends GameScreen {
                pictures.get(i).setPosition(xPos, yPos);
                pictures.get(i).setSize(tiles[i].getWidth(), tiles[i].getHeight());
                pictures.get(i).setVisible(false);
+               pictures.get(i).setTouchable(Touchable.disabled);
                stage.addActor(pictures.get(i));
 
            }
@@ -99,20 +102,56 @@ public class MatchingGame extends GameScreen {
             tiles[i].addListener(new ActorGestureListener() {
                 @Override
                 public void touchDown(InputEvent event, float x, float y, int pointer, int button) {
-                    pictures.get(index).setVisible(true);
-            tiles[index].setVisible(false);
+
+
+
+                    if (state == 0) {
+                        tilesUp = tiles[index];
+                        pictures.get(index).setVisible(true);
+                        //tilesUp1 = tiles[index];
+
+                        state = 1;
+                        pictureUp = pictures.get(index);
+
+                    } else if (state == 1) {
+                        state = 2;
+                        tilesUp1 = tiles[index];
+                        pictureUp1 = pictures.get(index);
+                        pictures.get(index).setVisible(true);
+                    }
+                    else {
+
+                    state  = 0;
+                        String name1 = pictureUp.getName();
+                        String name2 = pictureUp1.getName();
+                        if (name1.equals(name2)) {
+                            pictureUp.setVisible(false);
+                            pictureUp1.setVisible(false);
+                            tilesUp.setVisible(false);
+                            tilesUp1.setVisible(false);
+                        } else {//pictureUp.setVisible(true);
+
+                           // tilesUp1.setVisible(false);
+                            pictureUp.setVisible(false);
+                            //tilesUp.setVisible(true);
+                            pictureUp1.setVisible(false);
+                            //tilesUp1.setVisible(true);
+                        }
+
+                    }
+                    //tiles[index].setVisible(false);
+
                 }
             });
+
         }
-    //if (batgirl = batgirl ) {
-    //    remove. (batgirl);
-    //}
-    if ()
+    }
+
         /*for ( Actor pictures: stageActors()){
             if (pictures.getName()= != null && pictures.getName().equals("bear.png");
             pictures.remove();
         } */
-    }
+
 
     @Override
     public void setActionsForActors() {
@@ -120,6 +159,9 @@ public class MatchingGame extends GameScreen {
 
     @Override
     protected void calledEveryFrame() {
+       // if(Gdx.input.isTouched()){
+
+       // }
 
     }
 }
