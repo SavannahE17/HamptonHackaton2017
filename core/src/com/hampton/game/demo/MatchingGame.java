@@ -39,7 +39,7 @@ public class MatchingGame extends GameScreen {
 
     @Override
     public void createActors() {
-        backgroundColor = new Color(1, 1, 1, 1);
+        backgroundColor = new Color(.8726f, .6372f, .2718f, 1);
         tiles = new Actor[12];
 
         pictures = new Array<Actor>(12);
@@ -96,7 +96,7 @@ public class MatchingGame extends GameScreen {
                 @Override
                 public void touchDown(InputEvent event, float x, float y, int pointer, int button) {
                     pictures.get(index).setVisible(true);
-                    tiles[i].setVisible(false);
+                 //   tiles[i].setVisible(false);
 
                 }
             });
