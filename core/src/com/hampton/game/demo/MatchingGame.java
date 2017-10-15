@@ -48,6 +48,7 @@ public class MatchingGame extends GameScreen {
 
     private Array<Actor> pictures;
     private int state = 0;
+    private int counter;
 
     @Override
     public void initialize() {
@@ -96,28 +97,11 @@ public class MatchingGame extends GameScreen {
         pictures.add(ActorUtils.createActorFromImage("bear.png"));
         pictures.add(ActorUtils.createActorFromImage("ladybug.png"));
         pictures.add(ActorUtils.createActorFromImage("pig.png"));
-        pictures.shuffle();
 
 
 
-        int i;
 
-        for (i = 0; i < tiles.length; i++) {
-            int xPos = 210 + (i % 6) * 210;
-            int yPos = 210 + (i / 6) * 210;
-            tiles[i].setPosition(xPos, yPos);
-            stage.addActor(tiles[i]);
-
-
-            pictures.get(i).setPosition(xPos, yPos);
-            pictures.get(i).setSize(tiles[i].getWidth(), tiles[i].getHeight());
-            pictures.get(i).setVisible(false);
-            pictures.get(i).setTouchable(Touchable.disabled);
-            stage.addActor(pictures.get(i));
-
-
-
-        }
+        reset();
         /*batgirl = ActorUtils.createActorFromImage("batgirl.png");
         // change the width and length back to 3 (14, 18).
         batgirl.setSize(batgirl.getWidth()/14, batgirl.getHeight()/18);
@@ -126,6 +110,32 @@ public class MatchingGame extends GameScreen {
                 stage.getViewport().getScreenWidth()/7 - batgirl.getWidth()/7,
                 stage.getViewport().getScreenHeight()/7 - batgirl.getHeight()/7);
         stage.addActor(batgirl);*/
+    }
+
+    public void reset(){
+        pictures.shuffle();
+        int i;
+
+        counter = tiles.length;
+
+        for (i = 0; i < tiles.length; i++) {
+            tiles[i].remove();
+            pictures.get(i).remove();
+            int xPos = 210 + (i % 6) * 210;
+            int yPos = 210 + (i / 6) * 210;
+            tiles[i].setPosition(xPos, yPos);
+            stage.addActor(tiles[i]);
+            tiles[i].setVisible(true);
+
+
+            pictures.get(i).setPosition(xPos, yPos);
+            pictures.get(i).setSize(tiles[i].getWidth(), tiles[i].getHeight());
+            pictures.get(i).setVisible(false);
+            pictures.get(i).setTouchable(Touchable.disabled);
+            stage.addActor(pictures.get(i));
+
+        }
+
     }
 
     @Override
@@ -165,6 +175,7 @@ public class MatchingGame extends GameScreen {
                             pictureUp1.setVisible(false);
                             tilesUp.setVisible(false);
                             tilesUp1.setVisible(false);
+                            counter -= 2;
                         } else {//pictureUp.setVisible(true);
 
                            // tilesUp1.setVisible(false);
@@ -176,7 +187,9 @@ public class MatchingGame extends GameScreen {
 
                     }
                     //tiles[index].setVisible(false);
-
+                    if(counter == 0){
+                        reset();
+                    }
 
                 }
             });
