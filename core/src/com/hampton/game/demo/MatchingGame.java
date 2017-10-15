@@ -121,8 +121,8 @@ public class MatchingGame extends GameScreen {
         for (i = 0; i < tiles.length; i++) {
             tiles[i].remove();
             pictures.get(i).remove();
-            int xPos = 210 + (i % 6) * 210;
-            int yPos = 210 + (i / 6) * 210;
+            int xPos = 230 + (i % 6) * 230;
+            int yPos = 230 + (i / 6) * 230;
             tiles[i].setPosition(xPos, yPos);
             stage.addActor(tiles[i]);
             tiles[i].setVisible(true);
