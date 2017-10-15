@@ -1,6 +1,7 @@
 package com.hampton.game.demo;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.Interpolation;
 import com.badlogic.gdx.math.MathUtils;
@@ -28,6 +29,8 @@ import com.hampton.game.utils.ActorUtils;
 
 import java.util.Random;
 
+
+
 /**
  * Created by turnerd on 10/13/17.
  */
@@ -38,17 +41,24 @@ public class MatchingGame extends GameScreen {
     private Actor tilesUp1;
     private Actor pictureUp;
     private Actor pictureUp1;
+
     private Music rainMusic;
+
+    private Sound cheerSound;
 
     private Array<Actor> pictures;
     private int state = 0;
 
     @Override
     public void initialize() {
+
         rainMusic = Gdx.audio.newMusic(Gdx.files.internal("bgroundMusic.mp3"));
         rainMusic.setLooping(true);
         rainMusic.play();
         numFrames = 0;
+
+        cheerSound = Gdx.audio.newSound(Gdx.files.internal("childcheer.mp3"));
+
     }
 
     @Override
@@ -146,11 +156,11 @@ public class MatchingGame extends GameScreen {
                         }
                     }
                     else {
-
                     state  = 0;
                         String name1 = pictureUp.getName();
                         String name2 = pictureUp1.getName();
                         if (name1.equals(name2)) {
+                            cheerSound.play();
                             pictureUp.setVisible(false);
                             pictureUp1.setVisible(false);
                             tilesUp.setVisible(false);
